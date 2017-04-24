@@ -6,6 +6,7 @@
 package Interface;
 
 import Entity.Pacjent;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -31,5 +32,9 @@ public interface PacjentFacadeLocal {
     int count();
 
     public Pacjent findByLogin(String username);
+
+    public void addPatient(Date date, int tel, long pesel, String... s);
+
+  
     
 }

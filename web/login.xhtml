@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <script src="js/bootstrap.min.js" type="text/javascript"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        
+        <title>Login</title>
+    </h:head>
+    <h:body>
+        
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-brand">
+                    <div class="collapse navbar-collapse navHeaderCollapse">
+                        <ul class="nav navbar-nav navbar-right">
+                           <li><h:link outcome="register.xhtml"  value="Zarejestruj"/></li> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h:form>
+        Login:<br/>
+        <h:inputText value="#{loginController.username}"/><br/>
+        Hasło:<br/>
+        <h:inputSecret value="#{loginController.pass}"/><br/>
+        <h:commandButton value="Zaloguj" action="#{loginController.logIn()}"/>
+        </h:form>
+    </h:body>
+</html>
+
