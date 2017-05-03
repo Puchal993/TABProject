@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <script src="js/bootstrap.min.js" type="text/javascript"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-brand">
+                    <div class="collapse navbar-collapse navHeaderCollapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><h:link outcome="adminAdd.xhtml"  value="Dodaj lekarza"/></li> 
+                            <li><h:link outcome="adminEdit.xhtml" value="Edytuj lekarza"/></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h:dataTable value="#{adminController.all}" var="doc">
+                <h:column>
+                    <f:facet name="header">Imie</f:facet>
+                    <h:inputText value="#{doc.name}" rendered="#{doc.edit}"/>
+                    <h:outputText value="#{doc.name}" rendered="#{not doc.edit}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nazwisko</f:facet>
+                    <h:inputText value="#{doc.lastname}" rendered="#{doc.edit}"/>
+                    <h:outputText value="#{doc.lastname}" rendered="#{not doc.edit}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">Hasło</f:facet>
+                    <h:inputText value="#{doc.pass}" rendered="#{doc.edit}"/>
+                    <h:outputText value="#{doc.pass}" rendered="#{not doc.edit}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">E-mail</f:facet>
+                    <h:inputText value="#{doc.email}" rendered="#{doc.edit}"/>
+                    <h:outputText value="#{doc.email}" rendered="#{not doc.edit}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Telefon</f:facet>
+                    <h:inputText value="#{doc.tel}" rendered="#{doc.edit}"/>
+                    <h:outputText value="#{doc.tel}" rendered="#{not doc.edit}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Data zatrudnienia(YYYY/MM/DD)</f:facet>
+                    <h:inputText value="#{doc.data}" rendered="#{doc.edit}"/>
+                    <h:outputText value="#{doc.data}" rendered="#{not doc.edit}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Data zwolnienia(YYYY/MM/DD)</f:facet>
+                    <h:inputText value="#{doc.name}" rendered="#{doc.edit}"/>
+                    <h:outputText value="#{doc.name}" rendered="#{not doc.edit}"/>
+                </h:column>
+                
+            </h:dataTable>
+        </div>
+    </h:body>
+</html>
+
