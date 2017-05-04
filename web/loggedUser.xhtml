@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -18,11 +19,16 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><h:link outcome="register.xhtml"  value="Witaj #{loginController.username}"/></li> 
                             <li><h:link outcome="spec.xhtml" value="Umów wizytę"/></li>
+                            <li><h:link outcome="visitHistory.xhtml" value="Historia wizyt"/></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+        <c:set var="user" value="#{loginController.currentUser}"/>
+        <c:set var="#{patientController.current}" value="#{user}"/>
+        <c:set value="#{user}" target="#{patientController}" property="current"/>
+        
     </h:body>
 </html>
 

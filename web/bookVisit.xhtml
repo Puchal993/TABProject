@@ -12,51 +12,34 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <div class="navbar navbar-inverse navbar-static-top">
-            <div class="container">
-                <div class="navbar-brand">
-                    <div class="collapse navbar-collapse navHeaderCollapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><h:link outcome="adminAdd.xhtml"  value="Dodaj lekarza"/></li> 
-                            <li><h:link outcome="adminEdit.xhtml" value="Edytuj lekarza"/></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="container">
             <div class="col-md-10 col-lg-9" >
                 <h:form>
-                    <h:dataTable value="#{adminController.listW}" var="d" class="table table-bordered table-striped">
+                    <h:dataTable value="#{patientController.list}" var="d" class="table table-bordered table-striped">
                         <h:column>
-                            <f:facet name="header">Imie</f:facet>
+                            <f:facet name="header">Imię</f:facet>
                                 #{d.name}
                         </h:column>
-
+                        
                         <h:column>
                             <f:facet name="header">Nazwisko</f:facet>
                                 #{d.lastname}
                         </h:column>
-
+                        
                         <h:column>
-                            <f:facet name="header">Data zatrudnienia</f:facet>
-                                #{d.dat}
+                            <f:facet name="header">Data wizyty(YYYY/MM/DD)</f:facet>
+                            <h:inputText value="#{patientController.dat}"/>
                         </h:column>
-
+                        
                         <h:column>
-                            <f:facet name="header">Specjalizacja</f:facet>
-                                #{adminController.docSpec(d.spec)}
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Zwolnij</f:facet>
-                            <h:commandButton value="Zwolnij" action="#{adminController.fire(d.id)}"/>
+                            <f:facet name="header"></f:facet>
+                            Lekarz #{d.id} Pacjent:#{patientController.current}
+                            <h:commandButton value="Umów wizytę" action="#{patientController.bookVisit(d.id)}"/>
                         </h:column>
                     </h:dataTable>
                 </h:form>
             </div>
         </div>
-
     </h:body>
 </html>
 

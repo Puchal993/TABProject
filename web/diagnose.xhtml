@@ -2,8 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <meta charset="utf-8"/>
+    <h:head> <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <script src="js/bootstrap.min.js" type="text/javascript"/>
         <link href="css/bootstrap.min.css" rel="stylesheet"/>
@@ -11,17 +10,26 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-       <div class="navbar navbar-inverse navbar-static-top">
+        <div class="navbar navbar-inverse navbar-static-top">
             <div class="container">
                 <div class="navbar-brand">
                     <div class="collapse navbar-collapse navHeaderCollapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><h:link outcome="adminAdd.xhtml"  value="Dodaj lekarza"/></li> 
-                            <li><h:link outcome="adminEdit.xhtml" value="Edytuj lekarza"/></li>
+                            <li><h:link outcome="doctorPanel.xhtml"  value="Witaj #{loginController.username}"/></li> 
+                            <li><h:link outcome="doctorVisit.xhtml" value="Wizyty"/></li>
+
                         </ul>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="container">
+            <h:form>
+                
+                Diagnoza: #{doctorController.diagnosed}<br/>
+                <h:inputTextarea rows="10" cols="50" value="#{doctorController.diagnose}"/>
+                <h:commandButton value="Zatwierdź" action="#{doctorController.end()}"/>
+            </h:form>
         </div>
     </h:body>
 </html>

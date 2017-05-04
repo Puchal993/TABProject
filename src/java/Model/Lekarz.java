@@ -5,6 +5,7 @@
  */
 package Model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -15,10 +16,10 @@ public class Lekarz {
 
     private String name, lastname, login, pass, email, data, dataZ;
     private long pesel, pwz;
-    private int tel,id;
+    private int tel,id,spec;
     private Date dat, datZ;
     private boolean edit;
-
+    private BigDecimal score;
     
     
     public Lekarz() {
@@ -136,6 +137,24 @@ public class Lekarz {
     public void setId(int id) {
         this.id = id;
     }
+
+    public int getSpec() {
+        return spec;
+    }
+
+    public void setSpec(int spec) {
+        this.spec = spec;
+    }
+
+    public BigDecimal getScore() {
+        return score;
+    }
+
+    public void setScore(BigDecimal ocena) {
+        this.score = ocena;
+    }
+
+    
 
     
 

@@ -6,13 +6,11 @@
 package DAO;
 
 import DB.DBAccess;
+import Model.Specjalizacja;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-import Model.Specjalizacja;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,16 +18,15 @@ import java.util.Map;
  *
  * @author Lukasz
  */
-public class SpecjalizacjaDAO {
-
+public class GrupyLekowDAO {
     public Map<Integer, String> getAll() {
         Map<Integer, String> map = new HashMap<>();
-        Specjalizacja spec;
+       
         try {
 
             Connection conn = DriverManager.getConnection(DBAccess.getURL(), DBAccess.getLOGIN(), DBAccess.getPASS());
             Statement s = conn.createStatement();
-            ResultSet rs = s.executeQuery("select * from specjalizacja");
+            ResultSet rs = s.executeQuery("select * from grupy_lekow");
             while (rs.next()) {
                 //  spec = new Specjalizacja();
                 // spec.setId(rs.getInt(1));

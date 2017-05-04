@@ -50,7 +50,7 @@ public class LoginController implements Serializable {
 
             }
             if (lekarzDAO.isPassCorect(currentUser, pass)) {
-                return "llog.xhtml?faces-redirect=true";
+                return "doctorPanel.xhtml?faces-redirect=true";
             }
             if (adminDAO.isPassCorect(currentUser, pass)) {
                 return "ladmin.xhtml?faces-redirect=true";
