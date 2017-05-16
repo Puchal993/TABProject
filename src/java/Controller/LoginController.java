@@ -9,9 +9,7 @@ import DAO.AdminDAO;
 import DAO.LekarzDAO;
 import DAO.PacjentDAO;
 import java.io.Serializable;
-import javax.ejb.EJB;
 import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -53,7 +51,7 @@ public class LoginController implements Serializable {
                 return "doctorPanel.xhtml?faces-redirect=true";
             }
             if (adminDAO.isPassCorect(currentUser, pass)) {
-                return "ladmin.xhtml?faces-redirect=true";
+                return "adminPanel.xhtml?faces-redirect=true";
             }
         }
         FacesContext context = FacesContext.getCurrentInstance();

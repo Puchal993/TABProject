@@ -74,7 +74,8 @@ public class DoctorController implements Serializable {
      * Creates a new instance of DoctorController
      */
     public DoctorController() {
-        
+      //  VisitDAO visitDAO = new VisitDAO();
+       // listV = visitDAO.getDVisit(current);
     }
     
 }

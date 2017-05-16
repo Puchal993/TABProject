@@ -4,9 +4,28 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
+         <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <script src="js/bootstrap.min.js" type="text/javascript"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <title>Facelet Title</title>
     </h:head>
     <h:body>
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-brand">
+                    <div class="collapse navbar-collapse navHeaderCollapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><h:link outcome="register.xhtml"  value="Witaj #{loginController.username}"/></li> 
+                            <li><h:link outcome="spec.xhtml" value="Umów wizytę"/></li>
+                            <li><h:link outcome="visitHistory.xhtml" value="Historia wizyt"/></li>
+                            <li><h:link outcome="index.xhtml" value="Wyloguj"/></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <h:form>
                 <h:selectOneMenu value="#{patientController.specId}">

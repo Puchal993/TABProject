@@ -17,7 +17,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><h:link outcome="doctorPanel.xhtml"  value="Witaj #{loginController.username}"/></li> 
                             <li><h:link outcome="doctorVisit.xhtml" value="Wizyty"/></li>
-
+                            <li><h:link outcome="index.xhtml" value="Wyloguj"/></li>
                         </ul>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
         <div class="container">
             <h:form>
                 
-                Diagnoza: #{doctorController.diagnosed}<br/>
+               Diagnoza:<br/>
                 <h:inputTextarea rows="10" cols="50" value="#{doctorController.diagnose}"/>
                 <h:commandButton value="Zatwierdź" action="#{doctorController.end()}"/>
             </h:form>
