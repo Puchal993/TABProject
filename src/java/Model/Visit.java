@@ -6,55 +6,17 @@
 package Model;
 
 import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
  * @author Lukasz
  */
+@Getter
+@Setter
 public class Visit {
     private int id,idL,idP;
     private Date dat;
-    private String diagnose;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getIdL() {
-        return idL;
-    }
-
-    public void setIdL(int idL) {
-        this.idL = idL;
-    }
-
-    public int getIdP() {
-        return idP;
-    }
-
-    public void setIdP(int idP) {
-        this.idP = idP;
-    }
-
-    public Date getDat() {
-        return dat;
-    }
-
-    public void setDat(Date dat) {
-        this.dat = dat;
-    }
-
-    public String getDiagnose() {
-        return diagnose;
-    }
-
-    public void setDiagnose(String diagnose) {
-        this.diagnose = diagnose;
-    }
-    
-    
+    private String diagnose;  
 }
